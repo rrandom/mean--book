@@ -1,4 +1,4 @@
-exports.render = function(req, res){
+exports.render = function (req, res) {
   if (req.session.lastVisit) {
     console.log(req.session.lastVisit);
   }
@@ -7,5 +7,5 @@ exports.render = function(req, res){
 
   res.render('index', {
     title: 'Hello World'
-  })
-}
+  });
+};
