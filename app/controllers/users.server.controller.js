@@ -54,6 +54,7 @@ exports.signup = function (req, res, next) {
     var user = new User(req.body);
     var message = null;
     user.provider = 'local';
+    console.log("shit");
     user.save(function (err) {
       if (err) {
         var message = getErrorMessage(err);
@@ -109,4 +110,14 @@ exports.saveOAuthUserProfile = function (req, profile, done) {
       }
     }
   });
+};
+
+exports.requiresLogin = function(req, res, next){
+  if (!req.isAuthenticated()){
+    return res.status(400).send({
+      message: 'User is not logged in'
+    });
+  }
+
+  next();
 };

@@ -38,6 +38,7 @@ module.exports = function () {
 
   require('../app/routes/index.server.routes.js')(app);
   require('../app/routes/users.server.routes.js')(app);
+  require('../app/routes/articles.server.routes.js')(app);
 
   // place this line in the end because the order matters
   app.use(express.static('./public'));
