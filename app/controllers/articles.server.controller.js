@@ -58,10 +58,8 @@ exports.articleByID = function (req, res, next, id) {
 };
 
 exports.read = function (req, res) {
-
-
   res.json(req.article);
-}
+};
 
 exports.update = function (req, res) {
   var article = req.article;

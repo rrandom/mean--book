@@ -75,7 +75,7 @@ UserSchema.methods.hasPassword = function (password) {
 
 UserSchema.methods.authenticate = function (password) {
   return this.password == this.hasPassword(password);
-}
+};
 
 UserSchema.statics.findUniqueUsername = function (username, suffix, cb) {
   var _this = this;
@@ -93,9 +93,9 @@ UserSchema.statics.findUniqueUsername = function (username, suffix, cb) {
     } else {
       cb(null);
     }
-  })
+  });
 
-}
+};
 
 UserSchema.set('toJSON', {
   getters: true
